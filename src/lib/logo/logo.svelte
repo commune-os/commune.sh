@@ -1,12 +1,13 @@
 <script>
 import { logo } from '$lib/assets/logo.js'
+export let hovered = false;
 
 </script>
 
 <div class="logo">
     <a class="" href="/">
         <div class="l-c grd lg">
-            <div class="l-c-i grd-c">
+            <div class="l-c-i grd-c" class:hov={hovered}>
                 {@html logo}
             </div>
         </div>

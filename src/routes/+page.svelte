@@ -1,17 +1,31 @@
 <script>
 import '/static/main.css'
 import Logo from '$lib/logo/logo.svelte'
+
+let hovered = false;
 </script>
 
 <svelte:head>
     <title>Commune</title>
     <meta name="description" content="Build free and open internet communities">
+    <meta name="keywords" content="commune, matrix, chat, community, open
+        source, free, open, source, chat, messaging, federated, decentralized,
+        open, source, free, libre">
+    <meta name="author" content="Commune">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Commune">
+    <meta property="og:description" content="Build free and open internet communities">
+    <meta property="og:image" content="https://static.commune.sh/logo.png">
+    <meta property="og:url" content="https://commune.sh">
+
 </svelte:head>
 
 <div class="root">
     <nav class="nav ">
-        <a class="lnk fl" href="/" >
-            <Logo />
+        <a class="lnk fl" href="/" 
+            on:mouseleave={() => hovered = false}
+            on:mouseover={() => hovered = true}>
+            <Logo hovered={hovered} />
             <div class="name ml3 grd-c">
                 <a href="/">Commune</a>
             </div>
@@ -57,6 +71,7 @@ import Logo from '$lib/logo/logo.svelte'
     width: 100%;
 }
 .name {
+    margin-top: 2px;
     font-size: 1.6rem;
     font-weight: 700;
 }
